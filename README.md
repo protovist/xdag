@@ -1,8 +1,8 @@
 The Dagger (XDAG) cryptocurrency
 ================================
 
-- Official site: http://xdag.me
-- Main net is launched January 5, 2018 at 22:45 GMT. 
+- Community site: https://xdag.org
+- The Main net was launched January 5, 2018 at 22:45 GMT.
 
 
 Principles:
@@ -10,7 +10,7 @@ Principles:
 
 - Directed acyclic graph (DAG), not blockchain
 - Block = transaction = address
-- Original main chain idea
+- Original idea and implementation
 - Mineable, no premine, no ICO
 - Mining new money every 64 seconds
 
@@ -26,21 +26,21 @@ Install and run (Linux):
 
 - Clone from the git repository:
 
-        $ git clone http://xdag.me/xdag.git
+        $ git clone https://github.com/XDagger/xdag
 
 - Make:
 
-        $ cd xdag/cheatcoin
+        $ cd xdag/client
         $ make
 
-- Run, for example, the miner with 2 CPU mining threads, in daemon mode, connected to the pool xdag.me:13654
+- Run, for example, the miner with 2 CPU mining threads, in daemon mode, connected to the pool put.xdag.server.here:13654
 
-        $ ./xdag -m 2 -d xdag.me:13654
+        $ ./xdag -m 2 -d put.xdag.server.here:13654
         Enter random characters: [enter]
 
 - Run terminal connected to the daemon in the same folder:
 
-        $ xdag -i
+        $ ./xdag -i
         xdag> help
         [see help]
 
@@ -89,6 +89,7 @@ Double spending is prohibited because only first concurrent transaction (by this
 Structure of block:
 ------------------
 
+_The on-disk format will change in the future. Consider this the network protocol._
 Each block has fixed size 512 bytes.
 Block consists of 16 fields each of whish has length 32 bytes.
 Field 0 is header, it consists of 4 quadwords:
@@ -114,17 +115,11 @@ Transport layer:
 ---------------
 
 The dnet network is used as transport layer.
+_A new transport layer will come in the future._
 
 
-Updates:
+Maintainers:
 ---------------
 
-Replacement SHA256 transform code from openssl project,
-modified by true ( XDAG rvKaJSbP9DE6sg6XetYtSpaK+2aDbUq8 )
-
-- 50-150% speedup on Intel Core series post-Nehalem
-- 50-100% speedup on AMD Heavy Equipment cores
-- 400-500% speedup on Ryzen
-- Better use of threads than reference implementation
-
-Heat output is increased with the fast version, so you may want to continue using the old implementation on devices with poor cooling (notebooks, etc).
+Evgeniy ( XDAG: gKNRtSL1pUaTpzMuPMznKw49ILtP6qX3, BTC: 1Jonano4esJzZvqNtUY6NwfPme3EMpVs7n )  
+true ( rvKaJSbP9DE6sg6XetYtSpaK+2aDbUq8 )
